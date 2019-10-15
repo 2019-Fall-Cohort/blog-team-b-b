@@ -14,10 +14,10 @@ public class BlogPost {
 	
 	private String postTitle;
 	private PostAuthor postAuthor;
-	private PostGenre postGenre;
+	private Genre postGenre;
 	private LocalDate reviewDate = LocalDate.now(); 
 	
-	public BlogPost(String title, PostAuthor author, PostGenre genre, LocalDate date) {
+	public BlogPost(String title, PostAuthor author, Genre genre, LocalDate date) {
 		this.postTitle = title;
 		this.postAuthor = author;
 		this.postGenre = genre;
@@ -47,7 +47,7 @@ public class BlogPost {
 		this.postAuthor = postAuthor;
 	}
 
-	public PostGenre getPostGenre() {
+	public Genre getPostGenre() {
 		return postGenre;
 	}
 //
