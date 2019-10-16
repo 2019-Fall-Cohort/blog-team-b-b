@@ -23,29 +23,30 @@ public class Genre {
 		this.genre = genre;
 		this.posts = Arrays.asList(posts);
 	}
+	
 	public Long getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+//	public void setId(Long id) {
+//		this.id = id;
+//	}
 
 	public String getGenre() {
 		return genre;
 	}
 
-	public void setGenre(String genre) {
-		this.genre = genre;
-	}
+//	public void setGenre(String genre) {
+//		this.genre = genre;
+//	}
 
 	public List<BlogPost> getPosts() {
 		return posts;
 	}
 
-	public void setPosts(List<BlogPost> posts) {
-		this.posts = posts;
-	}
+//	public void setPosts(List<BlogPost> posts) {
+//		this.posts = posts;
+//	}
 
 
 }

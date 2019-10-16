@@ -7,8 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-
-
 @Entity
 public class PostAuthor {
 	@Id
@@ -30,25 +28,25 @@ public class PostAuthor {
 		return id;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+//	public void setId(Long id) {
+//		this.id = id;
+//	}
 
 	public String getAuthorName() {
 		return authorName;
 	}
 
-	public void setAuthorName(String authorName) {
-		this.authorName = authorName;
-	}
+//	public void setAuthorName(String authorName) {
+//		this.authorName = authorName;
+//	}
 
 	public List<BlogPost> getBlogPosts() {
 		return blogPosts;
 	}
 
-	public void setBlogPosts(List<BlogPost> blogPosts) {
-		this.blogPosts = blogPosts;
-	}
+//	public void setBlogPosts(List<BlogPost> blogPosts) {
+//		this.blogPosts = blogPosts;
+//	}
 	
 	
 
