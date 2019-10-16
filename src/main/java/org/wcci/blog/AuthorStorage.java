@@ -12,5 +12,7 @@ public class AuthorStorage {
 	public PostAuthor addAuthor(PostAuthor authorToAdd) {
 		return authorRepo.save(authorToAdd);
 	}
+	
+	
 
 }
