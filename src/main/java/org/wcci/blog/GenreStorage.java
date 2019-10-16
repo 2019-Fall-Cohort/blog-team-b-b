@@ -4,13 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class AuthorStorage {
+public class GenreStorage {
 
 	@Autowired
-	AuthorRepository authorRepo;
-		
-	public PostAuthor addAuthor(PostAuthor authorToAdd) {
-		return authorRepo.save(authorToAdd);
-	}
+	GenreRepository genreRepo;
 
+	public Genre addGenre(Genre genreToAdd) {
+		return genreRepo.save(genreToAdd);
+	}
 }
