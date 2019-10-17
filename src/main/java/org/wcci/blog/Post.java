@@ -31,11 +31,10 @@ public class Post {
 	}
 	
 	public Post(String givenTitle, String givenPostBody, Author givenAuthor, 
-			LocalDate givenDate, Genre givenGenre) {
+			Genre givenGenre) {
 		this.postTitle = givenTitle;
 		this.postBody = givenPostBody;
 		this.author = givenAuthor;
-		this.reviewDate = givenDate;
 		this.genre = givenGenre;
 	}
 	

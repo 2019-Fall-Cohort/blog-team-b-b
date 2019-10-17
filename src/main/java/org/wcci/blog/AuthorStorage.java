@@ -9,7 +9,7 @@ public class AuthorStorage {
 	@Autowired
 	AuthorRepository authorRepo;
 		
-	public PostAuthor addAuthor(PostAuthor authorToAdd) {
+	public Author addAuthor(Author authorToAdd) {
 		return authorRepo.save(authorToAdd);
 	}
 	
