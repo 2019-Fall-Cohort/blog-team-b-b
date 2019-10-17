@@ -22,6 +22,8 @@ public class AuthorController {
 	@Autowired
 	private PostStorage postStorage;
 	@Autowired
+	private AuthorStorage authorStorage;
+	@Autowired
 	private GenreStorage genreStorage;
 	@Autowired
 	private TagStorage tagStorage;
