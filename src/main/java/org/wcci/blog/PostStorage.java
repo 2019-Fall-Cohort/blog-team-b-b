@@ -22,5 +22,5 @@ public class PostStorage {
 	public Iterable<Post> findAllThePosts(){
 		return postRepo.findAll();
 	}
-	
+//	
 }
