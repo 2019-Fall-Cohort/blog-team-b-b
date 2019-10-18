@@ -12,9 +12,9 @@
     
     <div class = "wrapper">  
 
-        <section class="header" th:insert="/sections/header :: header"></section>
+        <section class="header" th:insert="/sections/header.html :: header"></section>
 
-        <section class="nav-bar" th:insert="/sections/nav :: nav"></section>
+        <section class="nav-bar" th:insert="/sections/nav.html :: nav"></section>
 
         <section class="main-body">
         
@@ -27,14 +27,10 @@
                 <li>Tags</li>
             </ul>
 
-        <section class="footer" th:insert="/sections/footer :: footer"></section>
+        <section class="footer" th:insert="/sections/footer.html :: footer"></section>
         
     </div>  
 
 </body>
-
-<footer class = "footer" th:insert="/sections/footer :: footer">
-    <p>&copy; B&B Blogs</p>
-</footer>
 
 </html>
