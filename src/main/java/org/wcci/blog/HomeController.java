@@ -1,8 +1,8 @@
 package org.wcci.blog;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+//
+//import java.util.ArrayList;
+//import java.util.Collection;
+//import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,7 +17,7 @@ import org.wcci.blog.GenreStorage;
 import org.wcci.blog.TagStorage;
 
 @Controller
-public class PostController {
+public class HomeController {
 	
 	@Autowired
 	private PostStorage postStorage;
@@ -28,15 +28,8 @@ public class PostController {
 	@Autowired
 	private TagStorage tagStorage;
 	
-//	@GetMapping("/")
-//	public String welcomePage(Model model) {
-//		return "index";
-//	}
-	
-	@GetMapping("/all_posts")
-	public String getAllPosts(Model model) {
-		model.addAttribute("posts", postStorage.findAllThePosts());
-		return "posts";
+	@GetMapping("/")
+	public String welcomePage(Model model) {
+		return "index";
 	}
-
 }
