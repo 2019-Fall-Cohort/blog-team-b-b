@@ -21,12 +21,12 @@ public class PostController {
 	
 	@Autowired
 	private PostStorage postStorage;
-//	@Autowired
-//	private AuthorStorage authorStorage;
-//	@Autowired
-//	private GenreStorage genreStorage;
-//	@Autowired
-//	private TagStorage tagStorage;
+	@Autowired
+	private AuthorStorage authorStorage;
+	@Autowired
+	private GenreStorage genreStorage;
+	@Autowired
+	private TagStorage tagStorage;
 	
 //	@GetMapping("/")
 //	public String welcomePage(Model model) {
@@ -36,7 +36,7 @@ public class PostController {
 	@GetMapping("/all_blogs")
 	public String findAllThePosts(Model model) {
 		model.addAttribute("posts", postStorage.findAllThePosts());
-		return "posts";
+		return "all_blogs";
 	}
 
 }
