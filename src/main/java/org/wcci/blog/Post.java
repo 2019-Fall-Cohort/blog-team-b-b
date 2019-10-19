@@ -21,7 +21,7 @@ public class Post {
 	private String postBody;
 	@ManyToOne
 	private Author author;
-	private LocalDate reviewDate = LocalDate.now(); 
+	private LocalDate postDate = LocalDate.now(); 
 	@ManyToOne
 	private Genre genre;
 	@ManyToMany
@@ -37,7 +37,7 @@ public class Post {
 		this.author = givenAuthor;
 		this.genre = givenGenre;
 	}
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -50,26 +50,50 @@ public class Post {
 		this.postTitle = postTitle;
 	}
 
+	public String getPostBody() {
+		return postBody;
+	}
+
+	public void setPostBody(String postBody) {
+		this.postBody = postBody;
+	}
+
 	public Author getAuthor() {
 		return author;
 	}
 
-	public LocalDate getReviewDate() {
-		return reviewDate;
+	public void setAuthor(Author author) {
+		this.author = author;
+	}
+
+	public LocalDate getPostDate() {
+		return postDate;
+	}
+
+	public void setPostDate(LocalDate postDate) {
+		this.postDate = postDate;
 	}
 
 	public Genre getGenre() {
 		return genre;
 	}
-	
+
+	public void setGenre(Genre genre) {
+		this.genre = genre;
+	}
+
 	public List<Tag> getTags() {
 		return tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
 	}
 
 	@Override
 	public String toString() {
 		return "Post [id=" + id + ", postTitle=" + postTitle + ", postBody=" + postBody + ", author=" + author
-				+ ", reviewDate=" + reviewDate + ", genre=" + genre + ", tags=" + tags + "]";
+				+ ", postDate=" + postDate + ", genre=" + genre + ", tags=" + tags + "]";
 	}
 
 	@Override
@@ -80,8 +104,8 @@ public class Post {
 		result = prime * result + ((genre == null) ? 0 : genre.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((postBody == null) ? 0 : postBody.hashCode());
+		result = prime * result + ((postDate == null) ? 0 : postDate.hashCode());
 		result = prime * result + ((postTitle == null) ? 0 : postTitle.hashCode());
-		result = prime * result + ((reviewDate == null) ? 0 : reviewDate.hashCode());
 		result = prime * result + ((tags == null) ? 0 : tags.hashCode());
 		return result;
 	}
@@ -115,15 +139,15 @@ public class Post {
 				return false;
 		} else if (!postBody.equals(other.postBody))
 			return false;
+		if (postDate == null) {
+			if (other.postDate != null)
+				return false;
+		} else if (!postDate.equals(other.postDate))
+			return false;
 		if (postTitle == null) {
 			if (other.postTitle != null)
 				return false;
 		} else if (!postTitle.equals(other.postTitle))
-			return false;
-		if (reviewDate == null) {
-			if (other.reviewDate != null)
-				return false;
-		} else if (!reviewDate.equals(other.reviewDate))
 			return false;
 		if (tags == null) {
 			if (other.tags != null)
@@ -133,8 +157,7 @@ public class Post {
 		return true;
 	}
 
-	
-	
+
 	
 	
 }
