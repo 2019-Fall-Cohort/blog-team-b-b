@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>B&B Blogs</title>
+    <link rel="stylesheet" href="../resources/static/css/styles.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <h1 class="Header">One Blog Post</h1>
+
+        <h2 class="post-listing__title" th:text="${post.postTitle}">Post Title</h2>
+        <h4 class="post-listing__post-date" th:text="${post.postDate}">Post Date</h4>
+        <h3 class="post-listing__author" th:text="${post.author.authorName}">Post Author</h3>
+        <h4 class="post-listing__post-body" th:text="${post.postBody}">Blog Body</h4>
+        <h4 class="post-listing__genre" th:text="${post.genre.genre}">Genre</h4>
+
+
+    </div>
+
+</body>
+
+</html>
