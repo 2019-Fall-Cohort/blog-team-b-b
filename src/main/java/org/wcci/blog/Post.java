@@ -38,8 +38,12 @@ public class Post {
 		this.genre = givenGenre;
 	}
 
-	public Long getId() {
+	public Long getPostId() {
 		return postId;
+	}
+
+	public void setPostId(Long postId) {
+		this.postId = postId;
 	}
 
 	public String getPostTitle() {
@@ -156,7 +160,6 @@ public class Post {
 			return false;
 		return true;
 	}
-
 
 	
 	

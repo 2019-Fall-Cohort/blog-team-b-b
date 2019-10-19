@@ -12,7 +12,7 @@ import javax.persistence.OneToMany;
 public class Author {
 	@Id
 	@GeneratedValue
-	private Long id; 
+	private Long authorId; 
 	
 	private String authorName;
 	
@@ -22,13 +22,17 @@ public class Author {
 	public Author() {
 	}
 	
-	public Author(String name) {
+	public Author(String name, Post...posts) {
 		this.authorName = name;
-//		this.posts = Arrays.asList(givenPosts);
+		this.posts = Arrays.asList(posts);
 	}
 
-	public Long getId() {
-		return id;
+	public Long getAuthorId() {
+		return authorId;
+	}
+
+	public void setAuthorId(Long authorId) {
+		this.authorId = authorId;
 	}
 
 	public String getAuthorName() {
@@ -49,15 +53,15 @@ public class Author {
 
 	@Override
 	public String toString() {
-		return "Author [id=" + id + ", authorName=" + authorName + ", posts=" + posts + "]";
+		return "Author [authorId=" + authorId + ", authorName=" + authorName + ", posts=" + posts + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((authorId == null) ? 0 : authorId.hashCode());
 		result = prime * result + ((authorName == null) ? 0 : authorName.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((posts == null) ? 0 : posts.hashCode());
 		return result;
 	}
@@ -71,15 +75,15 @@ public class Author {
 		if (getClass() != obj.getClass())
 			return false;
 		Author other = (Author) obj;
+		if (authorId == null) {
+			if (other.authorId != null)
+				return false;
+		} else if (!authorId.equals(other.authorId))
+			return false;
 		if (authorName == null) {
 			if (other.authorName != null)
 				return false;
 		} else if (!authorName.equals(other.authorName))
-			return false;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
 			return false;
 		if (posts == null) {
 			if (other.posts != null)
@@ -90,6 +94,5 @@ public class Author {
 	}
 
 	
-
 	
 }

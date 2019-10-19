@@ -1,5 +1,8 @@
 package org.wcci.blog;
 
+import java.util.ArrayList;
+import java.util.List;
+
 //import java.util.ArrayList;
 //import java.util.Collection;
 //import java.util.List;
@@ -15,6 +18,8 @@ import org.wcci.blog.PostStorage;
 import org.wcci.blog.AuthorStorage;
 import org.wcci.blog.GenreStorage;
 import org.wcci.blog.TagStorage;
+import org.wcci.reviewssite.Category;
+import org.wcci.reviewssite.Tag;
 
 @Controller
 public class PostController {
@@ -28,26 +33,29 @@ public class PostController {
 	@Autowired
 	private TagStorage tagStorage;
 	
-//	@GetMapping("/")
-//	public String welcomePage(Model model) {
-//		return "index";
-//	}
-	
 	@GetMapping("/all_blogs")
 	public String findAllThePosts(Model model) {
 		model.addAttribute("posts", postStorage.findAllThePosts());
 		return "all_blogs";
 	}
 	
-//	@PostMapping("/add_post")
-//	public String userAddPost(Model model) {
-//		Long postId;
-//		
-//		model.addAttribute("post", postStorage.addPost(Post postToAdd));
-//		
-//		
-//		
-//		return "redirect:/all_blogs/" + postId;
-//	}
+	@PostMapping("/add_post")
+	public String userAddPost(String userTitle, String userPostBody, 
+			Long authorId, Long genreId, LocalDate userDate) {
+		
+		userAuthor author = authorStorage.findAuthor(authorId);
+		userGenre genre = genreStorage.findGenre(genreId);
+		
+		List<Tag> tags = new ArrayList<Tag>();
+
+		Long postId;
+		Post postToAdd = new Post(String userTitle, String userPostBody, 
+				Author userAuthor, Genre userGenre);
+		postStorage.addPost(Post postToAdd);
+		
+		postId = postToAdd.getPostId();
+		
+		return "redirect:/all_blogs/" + postId;
+	}
 
 }
