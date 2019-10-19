@@ -15,7 +15,7 @@ import javax.persistence.ManyToOne;
 public class Post {
 	@Id
 	@GeneratedValue
-	private Long id; 
+	private Long postId; 
 	
 	private String postTitle;
 	private String postBody;
@@ -39,7 +39,7 @@ public class Post {
 	}
 
 	public Long getId() {
-		return id;
+		return postId;
 	}
 
 	public String getPostTitle() {
@@ -92,7 +92,7 @@ public class Post {
 
 	@Override
 	public String toString() {
-		return "Post [id=" + id + ", postTitle=" + postTitle + ", postBody=" + postBody + ", author=" + author
+		return "Post [postId=" + postId + ", postTitle=" + postTitle + ", postBody=" + postBody + ", author=" + author
 				+ ", postDate=" + postDate + ", genre=" + genre + ", tags=" + tags + "]";
 	}
 
@@ -102,9 +102,9 @@ public class Post {
 		int result = 1;
 		result = prime * result + ((author == null) ? 0 : author.hashCode());
 		result = prime * result + ((genre == null) ? 0 : genre.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((postBody == null) ? 0 : postBody.hashCode());
 		result = prime * result + ((postDate == null) ? 0 : postDate.hashCode());
+		result = prime * result + ((postId == null) ? 0 : postId.hashCode());
 		result = prime * result + ((postTitle == null) ? 0 : postTitle.hashCode());
 		result = prime * result + ((tags == null) ? 0 : tags.hashCode());
 		return result;
@@ -129,11 +129,6 @@ public class Post {
 				return false;
 		} else if (!genre.equals(other.genre))
 			return false;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
 		if (postBody == null) {
 			if (other.postBody != null)
 				return false;
@@ -143,6 +138,11 @@ public class Post {
 			if (other.postDate != null)
 				return false;
 		} else if (!postDate.equals(other.postDate))
+			return false;
+		if (postId == null) {
+			if (other.postId != null)
+				return false;
+		} else if (!postId.equals(other.postId))
 			return false;
 		if (postTitle == null) {
 			if (other.postTitle != null)
