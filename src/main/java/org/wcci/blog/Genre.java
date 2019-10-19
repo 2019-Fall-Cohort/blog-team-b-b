@@ -15,17 +15,18 @@ public class Genre {
 	private Long id;
 
 	private String genre;
+	
 	@OneToMany (mappedBy = "genre")
 	private List<Post> posts;
 
 	public Genre() {
 	}
 
-	public Genre(String genre, Post... posts) {
+	public Genre(String genre) {
 		this.genre = genre;
-		this.posts = Arrays.asList(posts);
+//		this.posts = Arrays.asList(posts);
 	}
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -34,8 +35,16 @@ public class Genre {
 		return genre;
 	}
 
+	public void setGenre(String genre) {
+		this.genre = genre;
+	}
+
 	public List<Post> getPosts() {
 		return posts;
+	}
+
+	public void setPosts(List<Post> posts) {
+		this.posts = posts;
 	}
 
 	@Override
@@ -79,6 +88,9 @@ public class Genre {
 			return false;
 		return true;
 	}
+	
+	
+
 	
 	
 

@@ -12,7 +12,7 @@
 <body>
 
     <div class="wrapper">
-        <h1 class="Header"> Blog Titles</h1>
+        <h1 class="Header">Blogs</h1>
         <!-- <div class="text-box"> -->
 
         <!-- <h1 th:text="${blog.posts}"></h1> -->
@@ -22,8 +22,16 @@
         <!-- <ul class="list-of-blogs"> -->
         
         <section class="post-listing" th:each="post : ${posts}">
-                
-            <h2 class="post-listing__title" th:text="${post.postTitle}">Post Title </h2>
+    
+            <h2 class="post-listing__title" th:text="${post.postTitle}">Post Title</h2>
+            <h4 class="post-listing__post-date" th:text="${post.postDate}">Post Date</h4>
+            <h3 class="post-listing__author" th:text="${post.author.authorName}">Post Author</h3>
+            <h4 class="post-listing__post-body" th:text="${post.postBody}">Blog Body</h4>
+            <h4 class="post-listing__genre" th:text="${post.genre.genre}">Genre</h4>
+
+            <hr>
+            <br>
+
         </section>
         
 

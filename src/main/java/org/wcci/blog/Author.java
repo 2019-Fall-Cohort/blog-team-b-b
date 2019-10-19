@@ -15,15 +15,16 @@ public class Author {
 	private Long id; 
 	
 	private String authorName;
+	
 	@OneToMany (mappedBy = "author")
 	private List<Post> posts;
 	
 	public Author() {
 	}
 	
-	public Author(String name, Post... givenPosts) {
+	public Author(String name) {
 		this.authorName = name;
-		this.posts = Arrays.asList(givenPosts);
+//		this.posts = Arrays.asList(givenPosts);
 	}
 
 	public Long getId() {
@@ -34,8 +35,16 @@ public class Author {
 		return authorName;
 	}
 
+	public void setAuthorName(String authorName) {
+		this.authorName = authorName;
+	}
+
 	public List<Post> getPosts() {
 		return posts;
+	}
+
+	public void setPosts(List<Post> posts) {
+		this.posts = posts;
 	}
 
 	@Override
@@ -79,6 +88,8 @@ public class Author {
 			return false;
 		return true;
 	}
+
+	
 
 	
 }
