@@ -22,9 +22,9 @@ public class Genre {
 	public Genre() {
 	}
 
-	public Genre(String genre) {
+	public Genre(String genre, Post... posts) {
 		this.genre = genre;
-//		this.posts = Arrays.asList(posts);
+		this.posts = Arrays.asList(posts);
 	}
 
 	public Long getId() {
