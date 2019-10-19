@@ -38,5 +38,16 @@ public class PostController {
 		model.addAttribute("posts", postStorage.findAllThePosts());
 		return "all_blogs";
 	}
+	
+//	@PostMapping("/add_post")
+//	public String userAddPost(Model model) {
+//		Long postId;
+//		
+//		model.addAttribute("post", postStorage.addPost(Post postToAdd));
+//		
+//		
+//		
+//		return "redirect:/all_blogs/" + postId;
+//	}
 
 }
