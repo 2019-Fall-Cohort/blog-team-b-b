@@ -34,6 +34,6 @@ public class GenreController {
 		@GetMapping("/all_genres")
 		public String getAllGenre(Model model) {
 			model.addAttribute("genres", genreStorage.findAllTheGenres());
-			return "genres";
+			return "all_genres";
 		}
 }
