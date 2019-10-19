@@ -1,9 +1,17 @@
-<<<<<<< HEAD
-body{
-    background-color: red;
-=======
 html {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font: 20px/1;
+    background-color: bisque;
+    color: darkblue;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+hr {
+    border-color: darkblue;
+    /* border-width: 2px; */
+    /* display: block; */
+    margin-top: 0.3rem;
+    margin-bottom: 1rem;
+    
 }
 
 .header {
@@ -11,13 +19,10 @@ html {
 }
 
 .wrapper {
-    font: red;
-
-    background-color: yellow;
+    
 }
 
 .post-listing {
 
     font-family: sans-serif;
->>>>>>> 7070487b244c7e466ffd409d01054cae5b0bac6d
 }
