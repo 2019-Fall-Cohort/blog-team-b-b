@@ -1,3 +1,23 @@
+<<<<<<< HEAD
 body{
     background-color: red;
+=======
+html {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.header {
+    justify-self: center;
+}
+
+.wrapper {
+    font: red;
+
+    background-color: yellow;
+}
+
+.post-listing {
+
+    font-family: sans-serif;
+>>>>>>> 7070487b244c7e466ffd409d01054cae5b0bac6d
 }
