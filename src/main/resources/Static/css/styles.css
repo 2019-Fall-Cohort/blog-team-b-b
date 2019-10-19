@@ -1,8 +1,18 @@
-h1{
-    display: grid;
-    justify-content: center;
+html {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-body{
-    background-color: red;
+.header {
+    justify-self: center;
+}
+
+.wrapper {
+    font: red;
+
+    background-color: yellow;
+}
+
+.post-listing {
+
+    font-family: sans-serif;
 }

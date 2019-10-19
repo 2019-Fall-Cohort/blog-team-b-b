@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>B&B Blogs</title>
-    <link rel="stylesheet" type="text/css" href="../../static/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
 </head>
 
 <body>
 
     <div class="wrapper">
-        <h1 class="Header">Blogs</h1>
+
+        <h1 class="header">Blogs</h1>
         <!-- <div class="text-box"> -->
 
         <!-- <h1 th:text="${blog.posts}"></h1> -->
@@ -20,44 +21,20 @@
 
 
         <!-- <ul class="list-of-blogs"> -->
-        
-        <section class="post-listing" th:each="post : ${posts}">
-    
-            <h2 class="post-listing__title" th:text="${post.postTitle}">Post Title</h2>
-            <h4 class="post-listing__post-date" th:text="${post.postDate}">Post Date</h4>
-            <h3 class="post-listing__author" th:text="${post.author.authorName}">Post Author</h3>
-            <h4 class="post-listing__post-body" th:text="${post.postBody}">Blog Body</h4>
-            <h4 class="post-listing__genre" th:text="${post.genre.genre}">Genre</h4>
 
-            <hr>
-            <br>
+        <section class="post-listing">
+
+            <article class="post-listing2" th:each="post : ${posts}">
+
+                <h2 class="post-listing__title" th:text="${post.postTitle}">Post Title</h2>
+                <h4 class="post-listing__post-date" th:text="${post.postDate}">Post Date</h4>
+                <h3 class="post-listing__author" th:text="${post.author.authorName}">Post Author</h3>
+                <h4 class="post-listing__post-body" th:text="${post.postBody}">Blog Body</h4>
+                <h4 class="post-listing__genre" th:text="${post.genre.genre}">Genre</h4>
+
+            </article>
 
         </section>
-        
-
-
-
-        <!-- <a class="blog-list" th:text="${blog.blogname}" th:href="|/blogs/${blog.id}|"></a></li> -->
-        <!-- </ul> -->
-        <!-- 
-        <div class="add-a=blog">
-            <form action="/posts/add" method="POST"></form>"
-            not sure about the method lets chat it out. -->
-        <!-- <label class="blog-name">Blog name
-                <input type="text" name="blogname" /></label>
-            <label class="label-item">Blog author
-                <input type="text" name="style" /></label>
-            <label class="label-item">Blog genre
-                <input type="text" name="brewery" /></label> -->
-        <!-- <label class="label-item">User Rating
-                            <input type="text" name="userRating" /></label>
-                        <label class="label-item">Description
-                            <input type="text" name="userDescription" /></label>
-                        <input type="hidden" name="companyId" th:value="${company.id}" /> -->
-
-        <!-- <button type="submit">Submit</button>
-            </form>
-        </div> -->
 
     </div>
 </body>
