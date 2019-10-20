@@ -5,16 +5,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>B&B Blogs</title>
-    <link rel="stylesheet"  href="../../static/css/styles" />
+  <title>B&B Blogs</title>
+    <link rel="stylesheet"  href="/css/styles" />
+
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+
 </head>
 
 <body>
+
     <div class="wrapper">
-        <h1 class="Header">Blogs</h1>
 
-        <section class="genre-listing" th:each="genres : ${all_genres}
+        <h1 class="header">Genres</h1>
+        <!-- <div class="text-box"> -->
+
+        <!-- <h1 th:text="${blog.posts}"></h1> -->
+        <!-- Maybe "${author.posts}" -->
 
 
+        <!-- <ul class="list-of-blogs"> -->
 
+        <section class="genre-listing">
+
+            <article class="genre-listing2" th:each="genres : ${genre}">
+
+                <div class="add-post-form__field">
+                    <label for="genreId" class="add-post-form__label"> Genre:</label>
+                    <select class="add-post-form__dropdown" name="genreId" id="genreId">
+                        <option value="">
+                        </option>
+                        <option th:each="genre : ${genres}" th:value="${genre.genreId}"
+                            th:text="${genre.genreName}">
+                        </option>
+                    </select>
+                </div>
+
+            </article>
+
+        </section>
+
+    </div>
 </body>
+
+</html>
+
+
+
