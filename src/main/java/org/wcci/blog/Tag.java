@@ -12,7 +12,7 @@ import javax.persistence.ManyToMany;
 public class Tag {
 	@Id
 	@GeneratedValue
-	private Long id; 
+	private Long tagId; 
 		
 	private String tagName;
 	@ManyToMany (mappedBy="tags")
