@@ -32,5 +32,10 @@ public class AuthorController {
 	public String authorHomePage(Model model) {
 		return "index";
 	}
-
+	
+	@GetMapping("/all_authors")
+	public String getAllGenre(Model model) {
+		model.addAttribute("genres", genreStorage.findAllTheGenres());
+		return "all_authors";
+	}
 }
