@@ -1,24 +1,26 @@
 package org.wcci.blog;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-//import java.util.ArrayList;
-//import java.util.Collection;
-//import java.util.List;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-//import org.springframework.web.bind.annotation.PathVariable;
-//import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import org.wcci.blog.PostStorage;
 import org.wcci.blog.AuthorStorage;
 import org.wcci.blog.GenreStorage;
 import org.wcci.blog.TagStorage;
 import org.wcci.reviewssite.Category;
+import org.wcci.reviewssite.Review;
 import org.wcci.reviewssite.Tag;
 
 @Controller
@@ -39,23 +41,41 @@ public class PostController {
 		return "all_blogs";
 	}
 	
-	@PostMapping("/add_post")
-	public String userAddPost(String userTitle, String userPostBody, 
-			Long authorId, Long genreId, LocalDate userDate) {
+	@GetMapping("/add_post")
+	public String getAddPost(Model model) {
+		model.addAttribute("authors", authorStorage.findAllTheAuthors());
+		model.addAttribute("genres", genreStorage.findAllTheGenres());
+		model.addAttribute("tags", tagStorage.findAllTheTags());
+		return "add_post";
+	}
+	
+	@PostMapping("/add")
+	public String userAddPost(String postTitle, String postBody, 
+			Long authorId, Long genreId, Long... tagList) {
 		
-		userAuthor author = authorStorage.findAuthor(authorId);
-		userGenre genre = genreStorage.findGenre(genreId);
+		Author author = authorStorage.findAuthor(authorId);
+		Genre genre = genreStorage.findGenre(genreId);
+//		List<Tag> tags = new ArrayList<Tag>();
+//		Long postId;
 		
-		List<Tag> tags = new ArrayList<Tag>();
-
-		Long postId;
-		Post postToAdd = new Post(String userTitle, String userPostBody, 
-				Author userAuthor, Genre userGenre);
-		postStorage.addPost(Post postToAdd);
+//		if (tagList != null) {
+//			for (Long id : tagList) {
+//				tags.add(tagStorage.findTag(id));
+//			}
+//			Post postToAdd = new Post(postTitle, postBody, author, genre, 
+//					tags);
+//		} else {
+//			Post postToAdd = new Post(postTitle, postBody, author, genre);
+//		}
+				
+		Post postToAdd = new Post(postTitle, postBody, author,
+				genre);
 		
-		postId = postToAdd.getPostId();
+//		postToAdd.postDate = LocalDate.now(); 
 		
-		return "redirect:/all_blogs/" + postId;
+		postStorage.addPost(postToAdd);
+		Long postId = postToAdd.getPostId();
+		return "redirect:/all_blogs"; // + postId
 	}
 
 }

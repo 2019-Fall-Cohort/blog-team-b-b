@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
+import org.wcci.reviewssite.Tag;
+
 @Entity
 public class Post {
 	@Id
@@ -30,12 +32,22 @@ public class Post {
 	public Post() {
 	}
 	
-	public Post(String givenTitle, String givenPostBody, Author givenAuthor, 
-			Genre givenGenre) {
-		this.postTitle = givenTitle;
-		this.postBody = givenPostBody;
-		this.author = givenAuthor;
-		this.genre = givenGenre;
+	public Post(String postTitle, String postBody, Author author, 
+			Genre genre, Tag... tags) {
+		this.postTitle = postTitle;
+		this.postBody = postBody;
+		this.author = author;
+		this.genre = genre;
+		this.tags = Arrays.asList(tags);
+	}
+	
+	public Post(String postTitle, String postBody, Author author, 
+			Genre genre, List<Tag> tags) {
+		this.postTitle = postTitle;
+		this.postBody = postBody;
+		this.author = author;
+		this.genre = genre;
+		this.tags = tags;
 	}
 
 	public Long getPostId() {

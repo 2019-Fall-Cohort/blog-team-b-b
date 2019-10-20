@@ -12,9 +12,9 @@ import javax.persistence.OneToMany;
 public class Genre {
 	@Id
 	@GeneratedValue
-	private Long id;
+	private Long genreId;
 
-	private String genre;
+	private String genreName;
 	
 	@OneToMany (mappedBy = "genre")
 	private List<Post> posts;
@@ -22,21 +22,25 @@ public class Genre {
 	public Genre() {
 	}
 
-	public Genre(String genre, Post... posts) {
-		this.genre = genre;
+	public Genre(String genreName, Post... posts) {
+		this.genreName = genreName;
 		this.posts = Arrays.asList(posts);
 	}
 
-	public Long getId() {
-		return id;
+	public Long getGenreId() {
+		return genreId;
 	}
 
-	public String getGenre() {
-		return genre;
+	public void setGenreId(Long genreId) {
+		this.genreId = genreId;
 	}
 
-	public void setGenre(String genre) {
-		this.genre = genre;
+	public String getGenreName() {
+		return genreName;
+	}
+
+	public void setGenreName(String genreName) {
+		this.genreName = genreName;
 	}
 
 	public List<Post> getPosts() {
@@ -49,15 +53,15 @@ public class Genre {
 
 	@Override
 	public String toString() {
-		return "Genre [id=" + id + ", genre=" + genre + ", posts=" + posts + "]";
+		return "Genre [genreId=" + genreId + ", genreName=" + genreName + ", posts=" + posts + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((genre == null) ? 0 : genre.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((genreId == null) ? 0 : genreId.hashCode());
+		result = prime * result + ((genreName == null) ? 0 : genreName.hashCode());
 		result = prime * result + ((posts == null) ? 0 : posts.hashCode());
 		return result;
 	}
@@ -71,15 +75,15 @@ public class Genre {
 		if (getClass() != obj.getClass())
 			return false;
 		Genre other = (Genre) obj;
-		if (genre == null) {
-			if (other.genre != null)
+		if (genreId == null) {
+			if (other.genreId != null)
 				return false;
-		} else if (!genre.equals(other.genre))
+		} else if (!genreId.equals(other.genreId))
 			return false;
-		if (id == null) {
-			if (other.id != null)
+		if (genreName == null) {
+			if (other.genreName != null)
 				return false;
-		} else if (!id.equals(other.id))
+		} else if (!genreName.equals(other.genreName))
 			return false;
 		if (posts == null) {
 			if (other.posts != null)
@@ -89,9 +93,4 @@ public class Genre {
 		return true;
 	}
 	
-	
-
-	
-	
-
 }

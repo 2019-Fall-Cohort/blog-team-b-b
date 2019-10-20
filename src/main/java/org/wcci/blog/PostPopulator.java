@@ -57,43 +57,43 @@ public class PostPopulator implements CommandLineRunner {
 		genreStorage.addGenre(genre7);
 		genreStorage.addGenre(genre8);
 		
-//		Tag tag1 = new Tag("interesting");
-//		Tag tag2 = new Tag("exhilirating");
-//		Tag tag3 = new Tag("helpful");
-//		Tag tag4 = new Tag("thrilling");
-//		Tag tag5 = new Tag("fascinating");
-//		Tag tag6 = new Tag("exhausting");
-//		Tag tag7 = new Tag("creepy");
-//		Tag tag8 = new Tag("humorous");
-//		Tag tag9 = new Tag("adequate");
-//		Tag tag10 = new Tag("brilliant");
+		Tag tag1 = new Tag("interesting");
+		Tag tag2 = new Tag("exhilirating");
+		Tag tag3 = new Tag("helpful");
+		Tag tag4 = new Tag("thrilling");
+		Tag tag5 = new Tag("fascinating");
+		Tag tag6 = new Tag("exhausting");
+		Tag tag7 = new Tag("creepy");
+		Tag tag8 = new Tag("humorous");
+		Tag tag9 = new Tag("adequate");
+		Tag tag10 = new Tag("brilliant");
 		
-//		tagStorage.addTag(tag1);
-//		tagStorage.addTag(tag2);
-//		tagStorage.addTag(tag3);
-//		tagStorage.addTag(tag4);
-//		tagStorage.addTag(tag5);
-//		tagStorage.addTag(tag6);
-//		tagStorage.addTag(tag7);
-//		tagStorage.addTag(tag8);
-//		tagStorage.addTag(tag9);
-//		tagStorage.addTag(tag10);             
+		tagStorage.addTag(tag1);
+		tagStorage.addTag(tag2);
+		tagStorage.addTag(tag3);
+		tagStorage.addTag(tag4);
+		tagStorage.addTag(tag5);
+		tagStorage.addTag(tag6);
+		tagStorage.addTag(tag7);
+		tagStorage.addTag(tag8);
+		tagStorage.addTag(tag9);
+		tagStorage.addTag(tag10);             
 		
-		Post post1 = new Post("First Post", "Taylor Swift found new boyfriend", 
-				author1, genre5);
-		Post post2 = new Post("Second Post", "I Hope They Serve Beer in Hell", 
+		Post post1 = new Post("Post Title 1", "Tuvalu is the new Bali. Let's all go there this winter!", 
+				author1, genre1);
+		Post post2 = new Post("Post Title 2", "If you love comedy, you'll love Tina Fey's new movie! Don't miss it when it comes to theatres in December!", 
 				author2, genre2);
-		Post post3 = new Post("Third Post", "Jane Eyre", 
+		Post post3 = new Post("Post Title 3", "If you want to live a simpler life, you must de-clutter at least once per month.", 
 				author3, genre3);
-		Post post4 = new Post("Fourth Post", "Dragon: Bruce Lee", 
+		Post post4 = new Post("Post Title 4", "Bruce Lee was an enigmatic hero. It feels like no-one really knew him. And they didn't.", 
 				author4, genre4);
-		Post post5 = new Post("Fifth Post", "This Changes Everything", 
+		Post post5 = new Post("Post Title 5", "Taylor Swift found a new boyfriend! All boys under age 17 cried!", 
 				author5, genre5);
-		Post post6 = new Post("Sixth Post", "A Wrinkle in Time", 
+		Post post6 = new Post("Post Title 6", "Boo at the Zoo is a great time! Bring the kids (or the grandkids) and have a blast!", 
 				author6, genre6);
-		Post post7 = new Post("Seventh Post", "Thirteen: Officially a Teen", 
+		Post post7 = new Post("Post Title 7", "The modern teen has a complex world, that we older people can barely imagine. We faced ridicule in person; they face it on their phones.", 
 				author7, genre7);
-		Post post8 = new Post("Eighth Post", "Help for the Aspiring Coder", 
+		Post post8 = new Post("Post Title 8", "You can learn to code, but if you want to survive in the world of software development, you must develop soft skills.", 
 				author8, genre8);
 
 		postStorage.addPost(post1);
@@ -106,4 +106,5 @@ public class PostPopulator implements CommandLineRunner {
 		postStorage.addPost(post8);		
 		
 	}
+	
 }

@@ -13,7 +13,7 @@
 
     <div class="wrapper">
 
-        <h1 class="header">Blogs</h1>
+        <h1 class="header">All Blog Posts</h1>
         <!-- <div class="text-box"> -->
 
         <!-- <h1 th:text="${blog.posts}"></h1> -->
@@ -22,17 +22,17 @@
 
         <!-- <ul class="list-of-blogs"> -->
 
-        <section class="post-listing">
+        <section class="post-listing-container">
 
-            <article class="post-listing2" th:each="post : ${posts}">
+            <article class="post-listing" th:each="post : ${posts}">
 
                 <h2 class="post-listing__title" th:text="${post.postTitle}">Post Title</h2>
                 <h4 class="post-listing__post-date" th:text="${post.postDate}">Post Date</h4>
-                <h3 class="post-listing__author" th:text="${post.author.authorName}">Post Author</h3>
-                <h4 class="post-listing__post-body" th:text="${post.postBody}">Blog Body</h4>
-                <h4 class="post-listing__genre" th:text="${post.genre.genre}">Genre</h4>
+                <h4 class="post-listing__author" th:text="'Author: '+${post.author.authorName}">Post Author</h4>
+                <h4 class="post-listing__post-body" th:text="'Post: '+${post.postBody}">Blog Body</h4>
+                <h4 class="post-listing__genre" th:text="'Genre: '+${post.genre.genreName}">Genre</h4>
+                <!-- <h5 class="post-listing__tags" th:text="'Tags: '+${post.tag.tags}">Tag List</h4> -->
 
-                <hr>
 
             </article>
 
