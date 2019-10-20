@@ -12,9 +12,9 @@ import javax.persistence.OneToMany;
 public class Genre {
 	@Id
 	@GeneratedValue
-	private Long id;
+	private Long genreId;
 
-	private String genre;
+	private String genreName;
 	
 	@OneToMany (mappedBy = "genre")
 	private List<Post> posts;
@@ -23,20 +23,20 @@ public class Genre {
 	}
 
 	public Genre(String genre, Post... posts) {
-		this.genre = genre;
+		this.genreName = genre;
 		this.posts = Arrays.asList(posts);
 	}
 
 	public Long getId() {
-		return id;
+		return genreId;
 	}
 
 	public String getGenre() {
-		return genre;
+		return genreName;
 	}
 
 	public void setGenre(String genre) {
-		this.genre = genre;
+		this.genreName = genre;
 	}
 
 	public List<Post> getPosts() {
@@ -49,15 +49,15 @@ public class Genre {
 
 	@Override
 	public String toString() {
-		return "Genre [id=" + id + ", genre=" + genre + ", posts=" + posts + "]";
+		return "Genre [id=" + genreId + ", genre=" + genreName + ", posts=" + posts + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((genre == null) ? 0 : genre.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((genreName == null) ? 0 : genreName.hashCode());
+		result = prime * result + ((genreId == null) ? 0 : genreId.hashCode());
 		result = prime * result + ((posts == null) ? 0 : posts.hashCode());
 		return result;
 	}
@@ -71,15 +71,15 @@ public class Genre {
 		if (getClass() != obj.getClass())
 			return false;
 		Genre other = (Genre) obj;
-		if (genre == null) {
-			if (other.genre != null)
+		if (genreName == null) {
+			if (other.genreName != null)
 				return false;
-		} else if (!genre.equals(other.genre))
+		} else if (!genreName.equals(other.genreName))
 			return false;
-		if (id == null) {
-			if (other.id != null)
+		if (genreId == null) {
+			if (other.genreId != null)
 				return false;
-		} else if (!id.equals(other.id))
+		} else if (!genreId.equals(other.genreId))
 			return false;
 		if (posts == null) {
 			if (other.posts != null)

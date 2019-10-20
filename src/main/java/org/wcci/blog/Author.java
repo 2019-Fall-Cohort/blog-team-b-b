@@ -12,7 +12,7 @@ import javax.persistence.OneToMany;
 public class Author {
 	@Id
 	@GeneratedValue
-	private Long id; 
+	private Long authorId; 
 	
 	private String authorName;
 	
@@ -28,7 +28,7 @@ public class Author {
 	}
 
 	public Long getId() {
-		return id;
+		return authorId;
 	}
 
 	public String getAuthorName() {
@@ -49,7 +49,7 @@ public class Author {
 
 	@Override
 	public String toString() {
-		return "Author [id=" + id + ", authorName=" + authorName + ", posts=" + posts + "]";
+		return "Author [id=" + authorId + ", authorName=" + authorName + ", posts=" + posts + "]";
 	}
 
 	@Override
@@ -57,7 +57,7 @@ public class Author {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((authorName == null) ? 0 : authorName.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((authorId == null) ? 0 : authorId.hashCode());
 		result = prime * result + ((posts == null) ? 0 : posts.hashCode());
 		return result;
 	}
@@ -76,10 +76,10 @@ public class Author {
 				return false;
 		} else if (!authorName.equals(other.authorName))
 			return false;
-		if (id == null) {
-			if (other.id != null)
+		if (authorId == null) {
+			if (other.authorId != null)
 				return false;
-		} else if (!id.equals(other.id))
+		} else if (!authorId.equals(other.authorId))
 			return false;
 		if (posts == null) {
 			if (other.posts != null)
