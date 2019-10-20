@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>B&B Blogs</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
-
 </head>
 
 <body>
@@ -16,20 +15,15 @@
 
         <h1 class="header">Tags</h1>
 
-
         <section class="tag-listing">
 
+            <article class="tag-listing__loop" th:each="tag : ${tags}">
 
-            <article class="tag-listing__loop" th:each="tag : ${tagId}">
-
-
-                <h4 class="tag-listing__item" th:text="${tag.tagName}">Genre</h4>
+                <h3 class="tag-listing__item" th:text="${tag.tagName}">Genre</h3>
 
                 <hr>
 
             </article>
-
-
 
         </section>
 

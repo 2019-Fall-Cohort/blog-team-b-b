@@ -16,8 +16,6 @@ import org.wcci.blog.AuthorStorage;
 import org.wcci.blog.TagStorage;
 import org.wcci.blog.TagStorage;
 
-
-
 @Controller 
 public class TagController {
 
@@ -33,7 +31,7 @@ public class TagController {
 		@GetMapping("/all_tags")
 		public String getAllTag(Model model) {
 			model.addAttribute("tags", tagStorage.findAllTheTags());
-			return "tags";
+			return "all_tags";
 		}
 }
 
