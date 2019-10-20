@@ -79,3 +79,9 @@ hr {
     grid-template-columns: repeat(3, 1fr);
     padding: 1rem;
   }
+
+  h1 {
+    display: grid;
+    padding: 20px;
+    justify-content: center;
+  }
