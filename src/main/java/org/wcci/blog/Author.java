@@ -22,9 +22,9 @@ public class Author {
 	public Author() {
 	}
 	
-	public Author(String name) {
+	public Author(String name, Post...posts) {
 		this.authorName = name;
-//		this.posts = Arrays.asList(givenPosts);
+		this.posts = Arrays.asList(posts);
 	}
 
 	public Long getId() {
@@ -56,8 +56,8 @@ public class Author {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((authorName == null) ? 0 : authorName.hashCode());
 		result = prime * result + ((authorId == null) ? 0 : authorId.hashCode());
+		result = prime * result + ((authorName == null) ? 0 : authorName.hashCode());
 		result = prime * result + ((posts == null) ? 0 : posts.hashCode());
 		return result;
 	}
@@ -71,15 +71,15 @@ public class Author {
 		if (getClass() != obj.getClass())
 			return false;
 		Author other = (Author) obj;
-		if (authorName == null) {
-			if (other.authorName != null)
-				return false;
-		} else if (!authorName.equals(other.authorName))
-			return false;
 		if (authorId == null) {
 			if (other.authorId != null)
 				return false;
 		} else if (!authorId.equals(other.authorId))
+			return false;
+		if (authorName == null) {
+			if (other.authorName != null)
+				return false;
+		} else if (!authorName.equals(other.authorName))
 			return false;
 		if (posts == null) {
 			if (other.posts != null)
@@ -90,6 +90,5 @@ public class Author {
 	}
 
 	
-
 	
 }

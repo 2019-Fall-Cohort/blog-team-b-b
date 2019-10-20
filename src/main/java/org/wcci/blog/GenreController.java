@@ -37,12 +37,14 @@ public class GenreController {
 			return "all_genres";
 		}
 		
-		@GetMapping("/add_genre")
-	    public String getAddPost(Model model) {
-//	        model.addAttribute("authors", authorStorage.findAllTheAuthors());
-	        model.addAttribute("genres", genreStorage.findAllTheGenres());
-//	        model.addAttribute("tags", tagStorage.findAllTheTags());
-	        return "add_genre";
-		}
+		
+//		@GetMapping("/add_genre")
+//	    public String getAddPost(Model model) {
+////	        model.addAttribute("authors", authorStorage.findAllTheAuthors());
+//	        model.addAttribute("genres", genreStorage.findAllTheGenres());
+////	        model.addAttribute("tags", tagStorage.findAllTheTags());
+//	        return "add_genre";
+//		}
+		
 		
 }

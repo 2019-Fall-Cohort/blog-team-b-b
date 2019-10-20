@@ -20,7 +20,7 @@
         <section class="genre-listing">
 
 
-            <article class="genre-listing__loop" th:each="genre : ${genreId}">
+            <article class="genre-listing__loop" th:each="genre : ${genres}">
 
 
                 <h4 class="genre-listing__item" th:text="${genre.genreName}">Genre</h4>

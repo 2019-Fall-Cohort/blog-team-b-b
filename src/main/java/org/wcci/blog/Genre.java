@@ -21,21 +21,28 @@ public class Genre {
 	public Genre() {
 	}
 
-	public Genre(String genre, Post... posts) {
-		this.genreName = genre;
+	public Genre(String genreName, Post... posts) {
+		this.genreName = genreName;
 		this.posts = Arrays.asList(posts);
 	}
 
-	public Long getId() {
+	public Long getGenreId() {
 		return genreId;
 	}
+
+
+
+	public void setGenreId(Long genreId) {
+		this.genreId = genreId;
+	}
+
 
 	public String getGenreName() {
 		return genreName;
 	}
 
-	public void setGenre(String genre) {
-		this.genreName = genre;
+	public void setGenreName(String genreName) {
+		this.genreName = genreName;
 	}
 
 	public List<Post> getPosts() {
@@ -48,15 +55,15 @@ public class Genre {
 
 	@Override
 	public String toString() {
-		return "Genre [id=" + genreId + ", genre=" + genreName + ", posts=" + posts + "]";
+		return "Genre [genreId=" + genreId + ", genreName=" + genreName + ", posts=" + posts + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((genreName == null) ? 0 : genreName.hashCode());
 		result = prime * result + ((genreId == null) ? 0 : genreId.hashCode());
+		result = prime * result + ((genreName == null) ? 0 : genreName.hashCode());
 		result = prime * result + ((posts == null) ? 0 : posts.hashCode());
 		return result;
 	}
@@ -70,15 +77,15 @@ public class Genre {
 		if (getClass() != obj.getClass())
 			return false;
 		Genre other = (Genre) obj;
-		if (genreName == null) {
-			if (other.genreName != null)
-				return false;
-		} else if (!genreName.equals(other.genreName))
-			return false;
 		if (genreId == null) {
 			if (other.genreId != null)
 				return false;
 		} else if (!genreId.equals(other.genreId))
+			return false;
+		if (genreName == null) {
+			if (other.genreName != null)
+				return false;
+		} else if (!genreName.equals(other.genreName))
 			return false;
 		if (posts == null) {
 			if (other.posts != null)
@@ -88,9 +95,4 @@ public class Genre {
 		return true;
 	}
 	
-	
-
-	
-	
-
 }

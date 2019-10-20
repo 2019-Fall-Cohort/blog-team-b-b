@@ -11,23 +11,74 @@
 
 <body>
 
-    <div class="wrapper-add-post">
+    <div class="wrapper">
 
-        Post postToAdd = new Post;
+        <form class="add-post-form" action="/add" method="POST">
 
-        <form>
             <fieldset>
+                <legend class=add-post-form__legend>Add a post here:</legend>
 
-                <legend>You may add a post below:</legend>
-                Your Name: <input type="text" ><br>
-                Email: <input type="text"><br>
-                Date of birth: <input type="text">
+                <div class="add-post-form__field">
+                    <label for="postTitle" class="add-post-form__label"> Post Title:</label>
+                    <input class="add-post-form__input" type="text" id="postTitle" name="postTitle"></input>
+                </div>
+
+                <div class="add-post-form__field">
+                    <label for="authorId" class="add-post-form__label"> Post Author:</label>
+                    <select class="add-post-form__dropdown" name="authorId" id="authorId">
+                        <option value="">
+                        </option>
+                        <option th:each="author : ${authors}" th:value="${author.authorId}" 
+                            th:text="${author.authorName}">
+                        </option>
+                    </select>
+                </div>
+
+                <div class="add-post-form__field">
+                    <label for="genreId" class="add-post-form__label"> Genre:</label>
+                    <select class="add-post-form__dropdown" name="genreId" id="genreId">
+                        <option value="">
+                        </option>
+                        <option th:each="genre : ${genres}" th:value="${genre.genreId}" 
+                            th:text="${genre.genreName}">
+                        </option>
+                    </select>
+                </div>
+
+                <div class="add-post-form__field">
+                    <label for="postBody" class="add-post-form__label"> Type your
+                        post here:</label>
+                </div>
+
+                <div class="add-post-form__field">
+                    <textarea class="add-post-form__textarea" id="postBody" name="postBody"></textarea>
+                </div>
+
+                <div class="add-post-form__field">
+                    <label for="tagList" class="add-post-form__label"> Add Tags:</label>
+                </div>
+
+                <div class="add-post-form__field">
+                    <label class="add-post-form__instructions"> (Control + Left Click to add more than
+                        one tag)</label>
+                </div>
+
+                <div class="add-post-form__field">
+                    <select multiple size class="add-post-form__selectbox" name="tagList" id="tagList">
+                        <option th:each="tag : ${tags}" th:value="${tag.tagId}" th:text="${tag.tagName}">
+                        </option>
+                    </select>
+                </div>
+
+                <div class="add-post-form__field">
+                    <button class="add-post-form__button primary_action" type="submit" name="submit"
+                        value="Submit Post"> Submit
+                    </button>
+                </div>
 
             </fieldset>
+
         </form>
-
-
-
 
     </div>
 
