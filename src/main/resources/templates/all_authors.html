@@ -8,22 +8,22 @@
     <title>B&B Blogs</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
 
-</head>
+</head> 
 
 <body>
 
     <div class="wrapper">
 
-        <h1 class="header">Genres</h1>
+        <h1 class="header">Authors</h1>
 
 
-        <section class="genre-listing">
+        <section class="author-listing">
 
 
-            <article class="genre-listing__loop" th:each="genre : ${genres}">
+            <article class="author-listing__loop" th:each="author : ${authors}">
 
 
-                <h4 class="genre-listing__item" th:text="${genre.genreName}">Genre</h4>
+                <h2 class="author-listing__item" th:text="${author.authorName}">Authors</h2>
 
                 <hr>
 
