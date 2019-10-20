@@ -31,8 +31,11 @@
                 <h4 class="post-listing__author" th:text="'Author: '+${post.author.authorName}">Post Author</h4>
                 <h4 class="post-listing__post-body" th:text="'Post: '+${post.postBody}">Blog Body</h4>
                 <h4 class="post-listing__genre" th:text="'Genre: '+${post.genre.genreName}">Genre</h4>
-                <!-- <h5 class="post-listing__tags" th:text="'Tags: '+${post.tag.tags}">Tag List</h4> -->
 
+                    <h5 class="post-listing__tags" th:each="tag : ${post.tags}">
+                        <div th:text="${tag.tagName}">Tag List</div>
+                    </h5>
+               
 
             </article>
 

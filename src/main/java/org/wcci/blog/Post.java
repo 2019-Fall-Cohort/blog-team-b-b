@@ -11,8 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
-import org.wcci.reviewssite.Tag;
-
 @Entity
 public class Post {
 	@Id
