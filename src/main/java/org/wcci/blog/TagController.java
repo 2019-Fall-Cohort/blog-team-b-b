@@ -21,7 +21,6 @@ import org.wcci.blog.TagStorage;
 @Controller 
 public class TagController {
 
-	
 		@Autowired
 		private PostStorage postStorage;
 		@Autowired

@@ -19,9 +19,9 @@ import org.wcci.blog.PostStorage;
 import org.wcci.blog.AuthorStorage;
 import org.wcci.blog.GenreStorage;
 import org.wcci.blog.TagStorage;
-import org.wcci.reviewssite.Category;
-import org.wcci.reviewssite.Review;
-import org.wcci.reviewssite.Tag;
+import org.wcci.blogsite.Category;
+import org.wcci.blogsite.Review;
+import org.wcci.blogsite.Tag;
 
 @Controller
 public class PostController {
@@ -55,18 +55,18 @@ public class PostController {
 		
 		Author author = authorStorage.findAuthor(authorId);
 		Genre genre = genreStorage.findGenre(genreId);
-//		List<Tag> tags = new ArrayList<Tag>();
-//		Long postId;
+		List<Tag> tags = new ArrayList<Tag>();
+		Long postId;
 		
-//		if (tagList != null) {
-//			for (Long id : tagList) {
-//				tags.add(tagStorage.findTag(id));
-//			}
-//			Post postToAdd = new Post(postTitle, postBody, author, genre, 
-//					tags);
-//		} else {
-//			Post postToAdd = new Post(postTitle, postBody, author, genre);
-//		}
+		if (tagList != null) {
+			for (Long id : tagList) {
+				tags.add(tagStorage.findTag(id));
+			}
+			Post postToAdd = new Post(postTitle, postBody, author, genre, 
+					tags);
+		} else {
+			Post postToAdd = new Post(postTitle, postBody, author, genre);
+		}
 				
 		Post postToAdd = new Post(postTitle, postBody, author,
 				genre);
@@ -74,7 +74,7 @@ public class PostController {
 //		postToAdd.postDate = LocalDate.now(); 
 		
 		postStorage.addPost(postToAdd);
-		Long postId = postToAdd.getPostId();
+//		Long postId = postToAdd.getPostId();
 		return "redirect:/all_blogs"; // + postId
 	}
 

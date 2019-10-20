@@ -27,7 +27,7 @@ public class Author {
 		this.posts = Arrays.asList(posts);
 	}
 
-	public Long getId() {
+	public Long getAuthorId() {
 		return authorId;
 	}
 
