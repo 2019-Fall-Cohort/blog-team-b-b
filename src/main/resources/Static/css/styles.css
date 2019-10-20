@@ -1,0 +1,26 @@
+html {
+    font: 20px/1;
+    background-color: bisque;
+    color: darkblue;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+hr {
+    border-color: darkblue;
+    margin-top: 0.3rem;
+    margin-bottom: 1rem;
+    
+}
+
+.header {
+    justify-self: center;
+}
+
+.wrapper {
+    
+}
+
+.post-listing {
+
+    font-family: sans-serif;
+}

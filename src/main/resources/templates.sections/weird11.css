@@ -1,0 +1,14 @@
+
+
+h1 {
+    grid-auto-columns: 20px;
+    justify-content: center;
+    background-color: lightgray;
+
+}
+
+list {
+    grid-auto-columns: 20px;
+    justify-content: center;
+    background-color: lightgray;
+}
