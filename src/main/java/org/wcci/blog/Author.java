@@ -27,12 +27,8 @@ public class Author {
 		this.posts = Arrays.asList(posts);
 	}
 
-	public Long getAuthorId() {
+	public Long getId() {
 		return authorId;
-	}
-
-	public void setAuthorId(Long authorId) {
-		this.authorId = authorId;
 	}
 
 	public String getAuthorName() {
@@ -53,7 +49,7 @@ public class Author {
 
 	@Override
 	public String toString() {
-		return "Author [authorId=" + authorId + ", authorName=" + authorName + ", posts=" + posts + "]";
+		return "Author [id=" + authorId + ", authorName=" + authorName + ", posts=" + posts + "]";
 	}
 
 	@Override
