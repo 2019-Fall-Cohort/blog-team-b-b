@@ -77,11 +77,11 @@ public class PostController {
 		return "redirect:/all_blogs"; //+ postId;
 	}
 	
-	@GetMapping("/one_post/{postId}")
+	@GetMapping("/all_blogs/{postId}")
 	public String singlePost(@PathVariable Long postId, Model model) {
 		Post post = postStorage.findPost(postId);
 		model.addAttribute("post", post);
-		return "one_post"; // +postId;
+		return "all_blogs"+postId;
 	}
 
 
