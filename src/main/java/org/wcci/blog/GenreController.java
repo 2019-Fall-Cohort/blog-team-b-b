@@ -1,5 +1,6 @@
 package org.wcci.blog;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -15,36 +16,48 @@ import org.wcci.blog.PostStorage;
 import org.wcci.blog.AuthorStorage;
 import org.wcci.blog.GenreStorage;
 import org.wcci.blog.TagStorage;
+import org.wcci.blog.Author;
 
-
-
-@Controller 
+@Controller
 public class GenreController {
-
 	
-		@Autowired
-		private PostStorage postStorage;
-		@Autowired
-		private AuthorStorage authorStorage;
-		@Autowired
-		private GenreStorage genreStorage;
-		@Autowired
-		private TagStorage tagStorage;
-		
-		@GetMapping("/all_genres")
-		public String getAllGenre(Model model) {
-			model.addAttribute("genres", genreStorage.findAllTheGenres());
-			return "all_genres";
-		}
-		
-		
-//		@GetMapping("/add_genre")
-//	    public String getAddPost(Model model) {
-////	        model.addAttribute("authors", authorStorage.findAllTheAuthors());
-//	        model.addAttribute("genres", genreStorage.findAllTheGenres());
-////	        model.addAttribute("tags", tagStorage.findAllTheTags());
-//	        return "add_genre";
-//		}
+	@Autowired
+	private PostStorage postStorage;
+	@Autowired
+	private AuthorStorage authorStorage;
+	@Autowired
+	private GenreStorage genreStorage;
+	@Autowired
+	private TagStorage tagStorage;
+
+	@GetMapping("/genre")
+	public String authorHomePage(Model model) {
+		return "index";
+	}
+	
+	@GetMapping("/all_genres")
+	public String getAllAuthors(Model model) {
+		model.addAttribute("genres", authorStorage.findAllTheAuthors());
+		return "all_genres";
+	}
+	
+	@GetMapping("/add_genre")
+	public String getAddAuthor(Model model) {
+		model.addAttribute("authors", authorStorage.findAllTheAuthors());
+		model.addAttribute("genres", genreStorage.findAllTheGenres());
+		model.addAttribute("tags", tagStorage.findAllTheTags());
+		return "add_genre";
+	}
+
+	@PostMapping("/add_genre")
+	public String userAddAuthor(String genreName) {
+		Author authorToAdd = new Author(genreName);
+		System.out.println(genreName);
+		Long id = authorToAdd.getAuthorId();
+		genreStorage.addGenre(genreToAdd);
+		System.out.println(id);
+		return "redirect:/all_authors";
+	}
 		
 		
 }
