@@ -13,22 +13,28 @@
 
     <div class="wrapper">
 
-        <h1 class="header">All Blog Posts</h1>
+        <h1 class="page-title">All Blog Posts</h1>
+
+        <div class="go-home">
+            <h5 class="go-home__text"><a href="/">Click here to go to homepage</a></h5>
+        </div>
 
         <section class="post-listing-container">
 
             <article class="post-listing" th:each="post : ${posts}">
 
-                <h2 class="post-listing__title"><a th:text="${post.postTitle}" th:href="|/one_post/${post.postId}|">Post Title</a></h2>
-                <h4 class="post-listing__post-date" th:text="${post.postDate}">Post Date</h4>
-                <h4 class="post-listing__author" th:text="'Author: '+${post.author.authorName}">Post Author</h4>
-                <h4 class="post-listing__post-body" th:text="'Post: '+${post.postBody}">Blog Body</h4>
-                <h4 class="post-listing__genre" th:text="'Genre: '+${post.genre.genreName}">Genre</h4>
-
-                <h5 class="post-listing__tags" th:each="tag : ${post.tags}">
-                    <div th:text="${tag.tagName}">Tag List</div>
-                </h5>
-
+                <div class="blog-item">
+                    <h2 class="post-listing__title"><a th:text="${post.postTitle}"
+                            th:href="|/one_post/${post.postId}|">Post
+                            Title</a></h2>
+                    <h4 class="post-listing__post-date" th:text="${post.postDate}">Post Date</h4>
+                    <h4 class="post-listing__author" th:text="'Author: '+${post.author.authorName}">Post Author</h4>
+                    <h4 class="post-listing__post-body" th:text="'Post: '+${post.postBody}">Blog Body</h4>
+                    <h4 class="post-listing__genre" th:text="'Genre: '+${post.genre.genreName}">Genre</h4>
+                    <h5 class="post-listing__tags" th:each="tag : ${post.tags}">
+                        <div th:text="${tag.tagName}">Tag List</div>
+                    </h5>
+                </div>
 
             </article>
 

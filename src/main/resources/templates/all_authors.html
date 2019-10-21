@@ -14,24 +14,26 @@
 
     <div class="wrapper">
 
-        <h1 class="header">Authors</h1>
+        <h1 class="page-title">Authors</h1>
 
-        <h3 class="go-home"><a href="index">Click here to go to homepage</a></h3>
+        <div class="go-home">
+            <h5 class="go-home__text"><a href="/">Click here to go to homepage</a></h5>
+        </div>
 
-        <section class="author-listing">
-            <article class="author-listing__loop" th:each="author : ${authors}">
-                <h3 class="author-listing__item" th:text="${author.authorName}">Authors</h3>
-                <hr>
-            </article>
+        <section class="add-new-type">
+            <form action="/add_author" method="POST">
+                <label for="author_name">Type in new Author name:</label>
+                <input type="text" name="authorName" id="author_name"></input>
+                <button type="submit">Submit</button>
+            </form>
         </section>
 
-        <form action="/add_author" method="POST">
-
-            <label for="author_name">Type in new Author name:</label>
-            <input type="text" name="authorName" id="author_name"></input>
-            <button type="submit">Submit</button>
-
-        </form>
+        <hr>
+        <section class="listing-container">
+            <div class="listing-container__item" th:each="author : ${authors}">
+                <h3 class="listing-container__content" th:text="${author.authorName}">Authors</h3>
+            </div>
+        </section>
 
     </div>
 

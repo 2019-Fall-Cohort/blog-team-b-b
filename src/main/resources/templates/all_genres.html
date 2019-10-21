@@ -14,27 +14,29 @@
 
     <div class="wrapper">
 
-        <h1 class="header">Genres</h1>
+        <h1 class="page-title">Genres</h1>
 
-        <section class="genre-listing">
-            <article class="genre-listing__loop" th:each="genre : ${genres}">
-                <h3 class="genre-listing__item" th:text="${genre.genreName}">Genres</h3>
-                <hr>
-            </article>
+        <div class="go-home">
+            <h5 class="go-home__text"><a href="/">Click here to go to homepage</a></h5>
+        </div>
+
+        <section class="add-new-type">
+            <form action="/add_genre" method="POST">
+                <label for="genre_name">Type in new Genre:</label>
+                <input type="text" name="genreName" id="genre_name"></input>
+                <button type="submit">Submit</button>
+            </form>
         </section>
 
-        <form action="/add_genre" method="POST">
-
-            <label for="genre_name">Type in new Genre:</label>
-            <input type="text" name="genreName" id="genre_name"></input>
-            <button type="submit">Submit</button>
-
-    </form>
-
-
-      
+        <hr>
+        <section class="listing-container">
+            <div class="listing-container__item" th:each="genre : ${genres}">
+                <h3 class="listing-container__content" th:text="${genre.genreName}">Genres</h3>
+            </div>
+        </section>
 
     </div>
+
 </body>
 
 </html>

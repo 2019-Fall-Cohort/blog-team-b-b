@@ -13,24 +13,29 @@
 
     <div class="wrapper">
 
-        <h1 class="header">Tags</h1>
+        <h1 class="page-title">Tags</h1>
 
-        <section class="tag-listing">
-            <article class="tag-listing__loop" th:each="tag : ${tags}">
-                <h3 class="tag-listing__item" th:text="${tag.tagName}">Tags</h3>
-                <hr>
-            </article>
+        <div class="go-home">
+            <h5 class="go-home__text"><a href="/">Click here to go to homepage</a></h5>
+        </div>
+
+        <section class="add-new-type">
+            <form action="/add_tag" method="POST">
+                <label for="tag_name">Type in new Tag:</label>
+                <input type="text" name="tagName" id="tag_name"></input>
+                <button type="submit">Submit</button>
+            </form>
         </section>
 
-        <form action="/add_tag" method="POST">
-
-            <label for="tag_name">Type in new Tag:</label>
-            <input type="text" name="tagName" id="tag_name"></input>
-            <button type="submit">Submit</button>
-
-        </form>
+        <hr>
+        <section class="listing-container">
+            <div class="listing-container__item" th:each="tag : ${tags}">
+                <h3 class="listing-container__content" th:text="${tag.tagName}">Tags</h3>
+            </div>
+        </section>
 
     </div>
+
 </body>
 
 </html>

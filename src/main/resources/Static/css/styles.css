@@ -1,27 +1,50 @@
 html {
-    font: 20px/1;
-    background-color: bisque;
-    color: darkblue;
-    font-family: 'Trebuchet MS', sans-serif;
+    background-color: #FFF2F1;
+}
+
+h1 {
+  display: grid;
+  padding: 20px;
+  justify-content: center;
 }
 
 hr {
     border-color: darkblue;
     margin-top: 0.3rem;
     margin-bottom: 1rem;
-    
 }
+
+ul {
+  list-style-type: none;
+ }
 
 .header {
     justify-self: center;
 }
 
 .wrapper {
-    
+  font: 18px/1;
+  color: darkblue;
+  font-family: 'Trebuchet MS', sans-serif;
+  margin: .5rem 1rem .5rem 1rem;
 }
 
 .post-listing {
     font-family: sans-serif;
+}
+
+.add-new-type {
+  padding-bottom: 1.5rem;
+  text-align: center;
+}
+
+.add-post-form__instructions {
+  font-size: 0.75rem;
+}
+
+.add-post-form__textarea {
+  width: 400px;
+  height: 150px;
 }
 
 .add-review {
@@ -65,6 +88,48 @@ hr {
     width: 800px;
   }
 
+  .blog-item {
+    margin: 8px;
+  }
+
+  .go-home {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .go-home__text {
+    font-style: italic;
+  }
+
+  .homepage-list {
+    text-align: center;
+  }
+
+  .homepage-list__item {
+    padding: 5px;
+  }
+
+  .listing-container {
+    display: grid;
+    grid-area: content;
+    grid-gap: 2rem 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 1rem;
+  }
+
+  .listing-container__content {
+    border: solid 1px;
+    border-color: darkmagenta;
+    border-radius: 0.25rem;
+    box-shadow: 0px 1px 2px 0px var(--pink);
+    padding: 3px;
+  }
+
+  .page-title {
+    margin: 0;
+    text-align: center;
+  }
+
   .post-listing {
     border: solid 1px;
     border-color: darkmagenta;
@@ -80,8 +145,4 @@ hr {
     padding: 1rem;
   }
 
-  h1 {
-    display: grid;
-    padding: 20px;
-    justify-content: center;
-  }
+  

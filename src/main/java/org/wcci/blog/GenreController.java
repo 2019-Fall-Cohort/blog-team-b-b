@@ -29,11 +29,6 @@ public class GenreController {
 	private GenreStorage genreStorage;
 	@Autowired
 	private TagStorage tagStorage;
-
-	@GetMapping("/genre")
-	public String authorHomePage(Model model) {
-		return "index";
-	}
 	
 	@GetMapping("/all_genres")
 	public String getAllAuthors(Model model) {
