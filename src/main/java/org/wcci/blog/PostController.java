@@ -19,9 +19,10 @@ import org.wcci.blog.PostStorage;
 import org.wcci.blog.AuthorStorage;
 import org.wcci.blog.GenreStorage;
 import org.wcci.blog.TagStorage;
-import org.wcci.blogsite.Category;
-import org.wcci.blogsite.Review;
-import org.wcci.blogsite.Tag;
+import org.wcci.blog.Post;
+import org.wcci.blog.Author;
+import org.wcci.blog.Genre;
+import org.wcci.blog.Tag;
 
 @Controller
 public class PostController {
@@ -77,11 +78,11 @@ public class PostController {
 		return "redirect:/all_blogs"; //+ postId;
 	}
 	
-	@GetMapping("/all_blogs/{postId}")
+	@GetMapping("/one_post/{postId}")
 	public String singlePost(@PathVariable Long postId, Model model) {
 		Post post = postStorage.findPost(postId);
 		model.addAttribute("post", post);
-		return "post";
+		return "one_post"; // +postId;
 	}
 
 

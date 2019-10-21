@@ -16,8 +16,7 @@ import org.wcci.blog.PostStorage;
 import org.wcci.blog.AuthorStorage;
 import org.wcci.blog.GenreStorage;
 import org.wcci.blog.TagStorage;
-import org.wcci.reviewssite.Beer;
-import org.wcci.reviewssite.Review;
+import org.wcci.blog.Author;
 
 @Controller
 public class AuthorController {
@@ -41,12 +40,20 @@ public class AuthorController {
 		model.addAttribute("authors", authorStorage.findAllTheAuthors());
 		return "all_authors";
 	}
+	
 	@GetMapping("/add_author")
-	public String getAddPost(Model model) {
+	public String getAddAuthor(Model model) {
 		model.addAttribute("authors", authorStorage.findAllTheAuthors());
 		model.addAttribute("genres", genreStorage.findAllTheGenres());
 		model.addAttribute("tags", tagStorage.findAllTheTags());
 		return "add_author";
 	}
 
+	@PostMapping("/add_author")
+	public String userAddAuthor(String authorName) {
+		Author authorToAdd = new Author(authorName);
+		AuthorStorage authorRepo = new AuthorStorage();
+		authorRepo.addAuthor(authorToAdd);
+		return "redirect:/add_author";
+	}
 }
