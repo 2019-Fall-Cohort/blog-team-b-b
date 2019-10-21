@@ -22,7 +22,7 @@ public class Author {
 	public Author() {
 	}
 	
-	public Author(String name, Post...posts) {
+	public Author(String name, Post... posts) {
 		this.authorName = name;
 		this.posts = Arrays.asList(posts);
 	}

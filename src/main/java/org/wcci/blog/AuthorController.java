@@ -52,8 +52,10 @@ public class AuthorController {
 	@PostMapping("/add_author")
 	public String userAddAuthor(String authorName) {
 		Author authorToAdd = new Author(authorName);
-		AuthorStorage authorRepo = new AuthorStorage();
-		authorRepo.addAuthor(authorToAdd);
-		return "redirect:/add_author";
+		System.out.println(authorName);
+		Long id = authorToAdd.getAuthorId();
+		authorStorage.addAuthor(authorToAdd);
+		System.out.println(id);
+		return "redirect:/all_authors";
 	}
 }
