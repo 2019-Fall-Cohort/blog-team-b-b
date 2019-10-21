@@ -44,15 +44,15 @@ public class AuthorController {
 	@GetMapping("/add_author")
 	public String getAddAuthor(Model model) {
 		model.addAttribute("authors", authorStorage.findAllTheAuthors());
-		model.addAttribute("genres", genreStorage.findAllTheGenres());
-		model.addAttribute("tags", tagStorage.findAllTheTags());
+//		model.addAttribute("genres", genreStorage.findAllTheGenres());
+//		model.addAttribute("tags", tagStorage.findAllTheTags());
 		return "add_author";
 	}
 
 	@PostMapping("/add_author")
 	public String userAddAuthor(String authorName) {
 		Author authorToAdd = new Author(authorName);
-		Long id = authorToAdd.getAuthorId();
+//		Long id = authorToAdd.getAuthorId();
 		authorStorage.addAuthor(authorToAdd);
 		return "redirect:/all_authors";
 	}

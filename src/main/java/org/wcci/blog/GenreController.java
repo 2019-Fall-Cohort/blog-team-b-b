@@ -37,27 +37,23 @@ public class GenreController {
 	
 	@GetMapping("/all_genres")
 	public String getAllAuthors(Model model) {
-		model.addAttribute("genres", authorStorage.findAllTheAuthors());
+		model.addAttribute("genres", genreStorage.findAllTheGenres());
 		return "all_genres";
 	}
 	
 	@GetMapping("/add_genre")
 	public String getAddAuthor(Model model) {
-		model.addAttribute("authors", authorStorage.findAllTheAuthors());
+//		model.addAttribute("authors", authorStorage.findAllTheAuthors());
 		model.addAttribute("genres", genreStorage.findAllTheGenres());
-		model.addAttribute("tags", tagStorage.findAllTheTags());
+//		model.addAttribute("tags", tagStorage.findAllTheTags());
 		return "add_genre";
 	}
 
 	@PostMapping("/add_genre")
-    public String userAddAuthor(String genreName) {
+    public String createGenre(String genreName) {
         Genre genreToAdd = new Genre(genreName);
-        System.out.println(genreName);
-        Long id = genreToAdd. getGenreId();
         genreStorage.addGenre(genreToAdd);
-        System.out.println(id);
         return "redirect:/all_genres";
     }
-		
 		
 }

@@ -16,18 +16,17 @@
 
         <h1 class="header">Genres</h1>
 
-
         <section class="genre-listing">
             <article class="genre-listing__loop" th:each="genre : ${genres}">
-                <h3 class="genre-listing__item" th:text="${genre.genreName}">Authors</h3>
+                <h3 class="genre-listing__item" th:text="${genre.genreName}">Genres</h3>
                 <hr>
             </article>
         </section>
 
         <form action="/add_genre" method="POST">
 
-            <label for="genre_name">Type in new Author name:</label>
-            <input type="text" name="authorName" id="genre_name"></input>
+            <label for="genre_name">Type in new Genre:</label>
+            <input type="text" name="genreName" id="genre_name"></input>
             <button type="submit">Submit</button>
 
     </form>
