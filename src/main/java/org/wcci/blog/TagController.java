@@ -33,5 +33,21 @@ public class TagController {
 			model.addAttribute("tags", tagStorage.findAllTheTags());
 			return "all_tags";
 		}
+		
+		@GetMapping("/add_tag")
+		public String createTag(Model model) {
+			model.addAttribute("tags", tagStorage.findAllTheTags());
+			return "add_tag";
+		}
+
+		@PostMapping("/add_tag")
+		public String createTag2(String tagName) {
+			Tag tagToAdd = new Tag(tagName);
+			tagStorage.addTag(tagToAdd);
+			return "redirect:/all_tags";
+		}
+		
+		
+		
 }
 

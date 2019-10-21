@@ -16,16 +16,19 @@
         <h1 class="header">Tags</h1>
 
         <section class="tag-listing">
-
             <article class="tag-listing__loop" th:each="tag : ${tags}">
-
-                <h3 class="tag-listing__item" th:text="${tag.tagName}">Genre</h3>
-
+                <h3 class="tag-listing__item" th:text="${tag.tagName}">Tags</h3>
                 <hr>
-
             </article>
-
         </section>
+
+        <form action="/add_tag" method="POST">
+
+            <label for="tag_name">Type in new Tag:</label>
+            <input type="text" name="tagName" id="tag_name"></input>
+            <button type="submit">Submit</button>
+
+        </form>
 
     </div>
 </body>
