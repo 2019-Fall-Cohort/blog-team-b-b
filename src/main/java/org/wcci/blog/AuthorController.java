@@ -30,30 +30,37 @@ public class AuthorController {
 	@Autowired
 	private TagStorage tagStorage;
 
-	@GetMapping("/author")
-	public String authorHomePage(Model model) {
-		return "index";
-	}
-	
+//	@GetMapping("/author")
+//	public String authorHomePage(Model model) {
+//		return "index";
+//	}
+//	
 	@GetMapping("/all_authors")
 	public String getAllAuthors(Model model) {
 		model.addAttribute("authors", authorStorage.findAllTheAuthors());
 		return "all_authors";
 	}
 	
-	@GetMapping("/add_author")
-	public String getAddAuthor(Model model) {
-		model.addAttribute("authors", authorStorage.findAllTheAuthors());
-		model.addAttribute("genres", genreStorage.findAllTheGenres());
-		model.addAttribute("tags", tagStorage.findAllTheTags());
-		return "add_author";
-	}
+//	@GetMapping("/add_author")
+//	public String getAddAuthor(Model model) {
+//		model.addAttribute("authors", authorStorage.findAllTheAuthors());
+//		model.addAttribute("genres", genreStorage.findAllTheGenres());
+//		model.addAttribute("tags", tagStorage.findAllTheTags());
+//		return "add_author";
+//	}
 
-	@PostMapping("/add_author")
-	public String userAddAuthor(String authorName) {
-		Author authorToAdd = new Author(authorName);
-		AuthorStorage authorRepo = new AuthorStorage();
-		authorRepo.addAuthor(authorToAdd);
-		return "redirect:/add_author";
-	}
+//	@PostMapping("/add_author")
+//	public String userAddAuthor(String authorName) {
+//		Author authorToAdd = new Author(authorName);
+//		AuthorStorage authorRepo = new AuthorStorage();
+//		authorRepo.addAuthor(authorToAdd);
+//		return "redirect:/add_author";
+//	}
+	
+	@GetMapping("/all_authors")
+	   public String getAllAuthors1(Model model) {
+	       model.addAttribute("authors", authorStorage.findAllTheAuthors());
+	       return "all_authors";
+	   }
+
 }
