@@ -16,6 +16,8 @@
 
         <h1 class="header">Authors</h1>
 
+        <h3 class="go-home"><a href="index">Click here to go to homepage</a></h3>
+
         <section class="author-listing">
             <article class="author-listing__loop" th:each="author : ${authors}">
                 <h3 class="author-listing__item" th:text="${author.authorName}">Authors</h3>

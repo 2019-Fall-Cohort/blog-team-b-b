@@ -43,9 +43,7 @@ public class GenreController {
 	
 	@GetMapping("/add_genre")
 	public String getAddAuthor(Model model) {
-//		model.addAttribute("authors", authorStorage.findAllTheAuthors());
 		model.addAttribute("genres", genreStorage.findAllTheGenres());
-//		model.addAttribute("tags", tagStorage.findAllTheTags());
 		return "add_genre";
 	}
 
