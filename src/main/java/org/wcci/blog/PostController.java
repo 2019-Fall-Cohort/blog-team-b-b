@@ -71,7 +71,7 @@ public class PostController {
 		Post postToAdd = new Post(postTitle, postBody, author,
 				genre);
 		
-//		postToAdd.postDate = LocalDate.now(); 
+		postToAdd.setPostDate(LocalDate.now()); 
 		
 		postStorage.addPost(postToAdd);
 //		Long postId = postToAdd.getPostId();
