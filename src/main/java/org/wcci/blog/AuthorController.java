@@ -1,5 +1,6 @@
 package org.wcci.blog;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -15,6 +16,8 @@ import org.wcci.blog.PostStorage;
 import org.wcci.blog.AuthorStorage;
 import org.wcci.blog.GenreStorage;
 import org.wcci.blog.TagStorage;
+import org.wcci.reviewssite.Beer;
+import org.wcci.reviewssite.Review;
 
 @Controller
 public class AuthorController {
@@ -38,4 +41,12 @@ public class AuthorController {
 		model.addAttribute("authors", authorStorage.findAllTheAuthors());
 		return "all_authors";
 	}
+	@GetMapping("/add_author")
+	public String getAddPost(Model model) {
+		model.addAttribute("authors", authorStorage.findAllTheAuthors());
+		model.addAttribute("genres", genreStorage.findAllTheGenres());
+		model.addAttribute("tags", tagStorage.findAllTheTags());
+		return "add_author";
+	}
+
 }

@@ -8,7 +8,7 @@
     <title>B&B Blogs</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
 
-</head> 
+</head>
 
 <body>
 
@@ -18,22 +18,31 @@
 
 
         <section class="author-listing">
-
-
             <article class="author-listing__loop" th:each="author : ${authors}">
-
-
                 <h3 class="author-listing__item" th:text="${author.authorName}">Authors</h3>
-
                 <hr>
-
             </article>
-
-
-
         </section>
-
     </div>
+
+    <form action="/author/add" method="POST">
+        <label>Beer name
+            <input type="text" name="authorName.author" /></label>
+        <!-- <label>Beer style
+            <input type="text" name="style.beer" /></label>
+        <label>Brewery
+            <input type="text" name="brewery.company" /></label>
+        <label>User Rating
+            <input type="text" name="userRating.beer" /></label>
+        <label>Review -->
+            <input type="text" name="author" /></label>
+        <input type="hidden" name="authorId" th:value="${author.id}"/>
+
+        <button type="submit">Submit</button>
+    </form>
+
+
+
 </body>
 
 </html>
