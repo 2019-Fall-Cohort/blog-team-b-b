@@ -14,28 +14,21 @@
     <div class="wrapper">
 
         <h1 class="header">All Blog Posts</h1>
-        <!-- <div class="text-box"> -->
-
-        <!-- <h1 th:text="${blog.posts}"></h1> -->
-        <!-- Maybe "${author.posts}" -->
-
-
-        <!-- <ul class="list-of-blogs"> -->
 
         <section class="post-listing-container">
 
             <article class="post-listing" th:each="post : ${posts}">
 
-                <h2 class="post-listing__title" th:text="${post.postTitle}">Post Title</h2>
+                <h2 class="post-listing__title"><a th:text="${post.postTitle}" th:href="|../all_blogs/${post.postId}|">Post Title</a></h2>
                 <h4 class="post-listing__post-date" th:text="${post.postDate}">Post Date</h4>
                 <h4 class="post-listing__author" th:text="'Author: '+${post.author.authorName}">Post Author</h4>
                 <h4 class="post-listing__post-body" th:text="'Post: '+${post.postBody}">Blog Body</h4>
                 <h4 class="post-listing__genre" th:text="'Genre: '+${post.genre.genreName}">Genre</h4>
 
-                    <h5 class="post-listing__tags" th:each="tag : ${post.tags}">
-                        <div th:text="${tag.tagName}">Tag List</div>
-                    </h5>
-               
+                <h5 class="post-listing__tags" th:each="tag : ${post.tags}">
+                    <div th:text="${tag.tagName}">Tag List</div>
+                </h5>
+
 
             </article>
 
