@@ -56,7 +56,6 @@ public class PostController {
 		Author author = authorStorage.findAuthor(authorId);
 		Genre genre = genreStorage.findGenre(genreId);
 		List<Tag> tags = new ArrayList<Tag>();
-		Long postId;
 		
 		if (tagList != null) {
 			for (Long id : tagList) {
@@ -74,8 +73,16 @@ public class PostController {
 		postToAdd.setPostDate(LocalDate.now()); 
 		
 		postStorage.addPost(postToAdd);
-//		Long postId = postToAdd.getPostId();
-		return "redirect:/all_blogs"; // + postId
+		Long postId = postToAdd.getPostId();
+		return "redirect:/all_blogs"; //+ postId;
 	}
+	
+	@GetMapping("/all_blogs/{postId}")
+	public String singlePost(@PathVariable Long postId, Model model) {
+		Post post = postStorage.findPost(postId);
+		model.addAttribute("post", post);
+		return "post";
+	}
+
 
 }
