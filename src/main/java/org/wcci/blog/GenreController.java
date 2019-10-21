@@ -16,7 +16,7 @@ import org.wcci.blog.PostStorage;
 import org.wcci.blog.AuthorStorage;
 import org.wcci.blog.GenreStorage;
 import org.wcci.blog.TagStorage;
-import org.wcci.blog.Author;
+//import org.wcci.blog.Author;
 
 @Controller
 public class GenreController {
@@ -50,14 +50,14 @@ public class GenreController {
 	}
 
 	@PostMapping("/add_genre")
-	public String userAddAuthor(String genreName) {
-		Author authorToAdd = new Author(genreName);
-		System.out.println(genreName);
-		Long id = authorToAdd.getAuthorId();
-		genreStorage.addGenre(genreToAdd);
-		System.out.println(id);
-		return "redirect:/all_authors";
-	}
+    public String userAddAuthor(String genreName) {
+        Genre genreToAdd = new Genre(genreName);
+        System.out.println(genreName);
+        Long id = genreToAdd. getGenreId();
+        genreStorage.addGenre(genreToAdd);
+        System.out.println(id);
+        return "redirect:/all_genres";
+    }
 		
 		
 }
