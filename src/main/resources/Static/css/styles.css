@@ -92,6 +92,15 @@ ul {
     margin: 8px;
   }
 
+  .footer__content {
+    text-align: center;
+  }
+
+  .footer__copyright {
+    font-size: 0.6rem;
+    padding-top: 3rem;
+  }
+
   .go-home {
     display: flex;
     justify-content: flex-end;
@@ -127,6 +136,11 @@ ul {
 
   .page-title {
     margin: 0;
+    text-align: center;
+  }
+
+  .page-title__homepage {
+    margin: 0 0 3rem 0;
     text-align: center;
   }
 

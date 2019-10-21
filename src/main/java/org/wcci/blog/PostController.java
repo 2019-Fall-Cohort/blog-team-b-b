@@ -72,7 +72,6 @@ public class PostController {
 				genre);
 		
 		postToAdd.setPostDate(LocalDate.now()); 
-		
 		postStorage.addPost(postToAdd);
 		Long postId = postToAdd.getPostId();
 		return "redirect:/all_blogs"; //+ postId;
